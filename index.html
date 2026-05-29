@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saya Ikegawa</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2933;
+      --muted: #5f6c7b;
+      --line: #e5e7eb;
+      --accent: #1f4e79;
+      --accent-light: #eef5fb;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 36px;
+      align-items: center;
+      padding-bottom: 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: var(--accent-light);
+    }
+
+    .name {
+      margin: 0 0 6px;
+      font-size: 2.35rem;
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .title {
+      margin: 0 0 18px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .interests {
+      margin: 0 0 22px;
+      max-width: 680px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 9px 15px;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .button.primary:hover {
+      text-decoration: none;
+      background: #173b5c;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      background: var(--accent-light);
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      padding: 22px 0 8px;
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav a {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    section {
+      padding-top: 38px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.45rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .paper-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .paper-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 0;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        padding: 32px 18px 56px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 22px;
+      }
+
+      .profile-photo {
+        margin: 0 auto;
+      }
+
+      .buttons,
+      nav,
+      .paper-links {
+        justify-content: center;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="hero" id="home">
+      <img src="profile.jpg" alt="Profile photo of Saya Ikegawa" class="profile-photo" />
+
+      <div>
+        <h1 class="name">Saya Ikegawa</h1>
+        <p class="title">PhD Candidate in Economics at the University of Washington</p>
+
+        <p class="interests">
+          <strong>Research interests:</strong> Macroeconomics, Public Finance, Wealth Inequality, Entrepreneurship and Intangible capital.
+        </p>
+
+        <div class="buttons">
+          <a href="cv.pdf" class="button primary">CV</a>
+          <a href="#work-in-progress" class="button">Work in Progress</a>
+          <a href="mailto:sikegawa@uw.edu" class="button">Email</a>
+        </div>
+      </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#work-in-progress">Work in Progress</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a PhD candidate in Economics at the University of Washington. My research studies macroeconomics and public finance,
+        with a focus on entrepreneurship, intangible capital, and wealth inequality.
+      </p>
+    </section>
+
+    <section id="work-in-progress">
+      <h2>Work in Progress</h2>
+
+      <article class="paper-card">
+        <h3>Unrealized Capital Gains Tax, Business Investment, and Wealth Inequality</h3>
+        <p class="paper-meta">Job Market Paper</p>
+        <p class="paper-meta"><strong>Presented at:</strong> BSE Summer Forum 2026 (scheduled)</p>
+      </article>
+
+      <article class="paper-card">
+        <h3>Reassessing Japan&rsquo;s Fiscal Health</h3>
+        <p class="paper-meta">With Ellen McGrattan and Adrian Peralta-Alva</p>
+        <p class="paper-meta"><strong>Presented at:</strong> CEBRA Annual Meeting 2025</p>
+      </article>
+
+      <article class="paper-card">
+        <h3>Intangible Investment in Japan: A Comparison with US</h3>
+        <p class="paper-meta"><strong>Presented at:</strong> Systemic Issues Division, Research Department, International Monetary Fund, 2024</p>
+      </article>
+
+      <article class="paper-card">
+        <h3>Markups and Inequality in Intangible Economy</h3>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <strong>Email:</strong><br />
+        <a href="mailto:sikegawa@uw.edu">sikegawa@uw.edu</a>
+      </p>
+    </section>
+
+    <footer>
+      © 2026 Saya Ikegawa. Last updated May 2026.
+    </footer>
+  </main>
+</body>
+</html>

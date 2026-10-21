@@ -3,13 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Saya Ikegawa | Economics, University of Washington</title>
+<title>Saya Ikegawa | Economics Job Market Candidate, University of Washington</title>
 <meta name="description" content="Saya Ikegawa is a PhD candidate in Economics at the University of Washington on the 2026–2027 job market. Fields: quantitative macroeconomics and public economics.">
 <link rel="canonical" href="https://sayaikegawa.com/">
+<meta property="og:type" content="profile">
 <meta property="og:title" content="Saya Ikegawa | Economics PhD Candidate, University of Washington">
 <meta property="og:description" content="On the 2026–2027 job market. Job market paper: Unrealized Capital Gains Tax, Business Investment, and Wealth Inequality.">
 <meta property="og:url" content="https://sayaikegawa.com/">
+<meta property="og:image" content="https://sayaikegawa.com/photo.jpg">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b6084'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='white' text-anchor='middle'%3ESI%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saya Ikegawa",
+  "url": "https://sayaikegawa.com/",
+  "image": "https://sayaikegawa.com/photo.jpg",
+  "email": "mailto:sikegawa@uw.edu",
+  "jobTitle": "PhD Candidate in Economics",
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Washington", "url": "https://econ.washington.edu/" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Australian National University" },
+    { "@type": "CollegeOrUniversity", "name": "Keio University" }
+  ],
+  "knowsAbout": ["Quantitative Macroeconomics", "Public Economics", "Capital Gains Taxation", "Wealth Inequality", "Entrepreneurship", "Intangible Capital"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
@@ -33,34 +53,43 @@
     font-size: 17px;
     line-height: 1.6;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover, a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+  /* Links: accent colour plus a soft underline, so they stand out from body text */
+  a {
+    color: var(--accent); text-decoration: underline; text-decoration-color: #a9c3d6;
+    text-decoration-thickness: 1px; text-underline-offset: 3px;
+  }
+  a:hover, a:focus-visible { text-decoration-color: currentColor; }
   .skip { position: absolute; left: -9999px; }
   .skip:focus { left: 16px; top: 16px; background: #fff; padding: 8px 12px; }
+  main:focus { outline: none; }
 
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 32px 40px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 52px 32px 40px; }
 
   /* Header */
   header { display: flex; gap: 36px; align-items: center; padding-bottom: 28px; border-bottom: 1px solid var(--rule); }
-  .photo { width: 200px; height: 250px; border-radius: 6px; object-fit: cover; object-position: 50% 25%; flex: none; background: var(--accent-soft); }
+  .photo { width: 180px; height: 225px; border-radius: 6px; object-fit: cover; object-position: 50% 25%; flex: none; background: var(--accent-soft); }
   h1 { font-size: 40px; line-height: 1.15; font-weight: 600; margin: 0 0 4px; letter-spacing: -0.01em; }
   .role { margin: 0; color: var(--muted); font-size: 18px; }
-  .market {
-    display: inline-block; margin: 12px 0 0; padding: 3px 12px;
-    background: var(--accent); color: #fff; border-radius: 4px;
-    font-weight: 600; font-size: 15.5px;
-  }
-  .links { margin: 14px 0 0; font-size: 16px; }
+  .market { margin: 2px 0 0; color: var(--muted); font-size: 15.5px; font-style: italic; }
+  .links { margin: 16px 0 0; font-size: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
   .links a { font-weight: 500; }
-  .links .sep { color: #b4bac3; margin: 0 8px; }
-  .fields { margin: 8px 0 0; font-size: 16px; color: var(--muted); }
+  .links a.cta {
+    display: inline-block; padding: 7px 14px; border: 1px solid var(--accent); border-radius: 4px;
+    font-weight: 600; line-height: 1; text-decoration: none; background: #fff;
+  }
+  .links a.cta:hover, .links a.cta:focus-visible { background: var(--accent-soft); }
+  .fields { margin: 10px 0 0; font-size: 16px; color: var(--muted); }
   .fields b { color: var(--text); font-weight: 600; }
   .fields.interests { margin-top: 2px; }
 
-  /* Layout */
-  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 56px; padding-top: 30px; }
-  main { min-width: 0; }
-  main p { max-width: 68ch; }
+  /* Layout: sidebar on the left, research on the right.
+     main comes first in the HTML so phones and screen readers reach the research first. */
+  .grid {
+    display: grid; grid-template-columns: 240px minmax(0, 1fr); column-gap: 48px;
+    grid-template-areas: "side main"; padding-top: 30px;
+  }
+  main { grid-area: main; min-width: 0; }
+  aside { grid-area: side; }
   .intro { margin: 0 0 30px; font-size: 17.5px; }
   .intro p { margin: 0 0 12px; }
   .intro p:last-child { margin-bottom: 0; }
@@ -78,19 +107,21 @@
   .title { font-size: 19.5px; font-weight: 600; line-height: 1.35; margin: 0; }
   .meta { margin: 4px 0 0; color: var(--muted); font-style: italic; font-size: 15.5px; }
   .meta a { font-style: normal; }
-  .meta.status { color: var(--accent); font-weight: 500; }
+  .meta.status {
+    display: inline-block; margin-top: 8px; padding: 2px 8px; font-style: normal; font-size: 13px;
+    letter-spacing: .03em; color: var(--muted); border: 1px solid #cedde9; border-radius: 3px; background: #fff;
+  }
   .btns { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
   .btns a, .more summary {
     display: inline-block; font-size: 14px; font-weight: 500; line-height: 1;
     padding: 6px 11px; border: 1px solid #bfd2e2; border-radius: 4px; color: var(--accent);
-    background: #fff; cursor: pointer; list-style: none;
+    background: #fff; cursor: pointer; list-style: none; text-decoration: none;
   }
-  .btns a:hover, .more summary:hover { background: var(--accent-soft); text-decoration: none; }
+  .btns a:hover, .more summary:hover { background: var(--accent-soft); }
   .more { margin: 10px 0 0; }
   .more summary::-webkit-details-marker { display: none; }
-  .more summary::after { content: " ▾"; font-size: 11px; }
-  .more[open] summary::after { content: " ▴"; }
-  .summary { margin: 8px 0 0; }
+  .more summary::after { content: " ▾"; content: " ▾" / ""; font-size: 11px; }
+  .more[open] summary::after { content: " ▴"; content: " ▴" / ""; }
   .abstract { margin: 12px 0 0; font-size: 16px; color: #33373e; }
   .abstract b { font-weight: 600; color: var(--text); }
   details .abstract { padding: 12px 16px; background: #fff; border: 1px solid var(--rule); border-radius: 6px; }
@@ -103,66 +134,97 @@
   .coauthors { margin: 4px 0 0; font-size: 16px; color: var(--muted); }
   .coauthors + .meta { margin-top: 0; }
   .coauthors a { white-space: nowrap; }
-  .finding { margin: 14px 0 0; font-size: 16.5px; }
-  .finding b { font-weight: 600; }
-  .facts { margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid #cedde9; font-size: 15.5px; }
-  .facts p { margin: 0 0 6px; }
-  .facts p:last-child { margin: 0; }
-  .facts b { font-weight: 600; }
   .nw { white-space: nowrap; }
+  .pres { margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid #cedde9; font-size: 15.5px; }
+  .pres .award { margin: 0 0 10px; }
+  .pres .award b { font-weight: 600; }
+  .pres h4 { margin: 0 0 6px; font-size: 15.5px; font-weight: 600; }
+  .pres ul { margin: 0; padding-left: 20px; }
+  .pres li { margin-bottom: 4px; }
+  .pres li::marker { color: #9fb3c4; }
+  .pres .when { color: var(--muted); }
 
   /* Teaching */
   .list { list-style: none; margin: 0; padding: 0; font-size: 16px; }
   .list li { margin-bottom: 8px; }
   .list .when { color: var(--muted); }
-  .skills { margin: 0; font-size: 16px; }
+  .list.bullets { list-style: disc; padding-left: 20px; }
+  .list.bullets li { padding-left: 2px; margin-bottom: 6px; }
+  .list.bullets li::marker { color: #9fb3c4; }
 
   /* Sidebar */
-  aside { font-size: 15.5px; line-height: 1.5; }
+  aside { font-size: 15px; line-height: 1.5; }
   aside section { margin-bottom: 30px; }
   aside h2 { margin-bottom: 12px; }
   aside ul { list-style: none; margin: 0; padding: 0; }
   aside li { margin-bottom: 12px; }
   aside li:last-child { margin-bottom: 0; }
-  aside .sub { display: block; color: var(--muted); font-size: 14.5px; }
-  aside .note { margin-top: 2px; font-style: italic; line-height: 1.4; }
+  aside p { margin: 0; }
+  aside .sub { display: block; color: var(--muted); font-size: 14px; }
 
   footer { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; }
 
-  /* Phones: JMP comes right after the header; sidebar moves below research */
-  @media (max-width: 820px) {
-    .wrap { padding: 24px 16px 32px; }
+  /* Phones and small tablets: JMP comes right after the header; sidebar moves below research */
+  @media screen and (max-width: 820px) {
+    .wrap { max-width: 720px; padding: 24px 16px 32px; }
     header { display: grid; grid-template-columns: 104px 1fr; column-gap: 16px; row-gap: 0; align-items: center; padding-bottom: 22px; }
     header > div { display: contents; }
-    .photo { width: 104px; height: 104px; grid-row: 1 / span 2; }
+    .photo { width: 104px; height: 104px; grid-row: 1 / span 3; }
     h1 { font-size: 29px; align-self: end; margin: 0; }
     .role { font-size: 15.5px; line-height: 1.35; align-self: start; }
-    .market, .links, .fields { grid-column: 1 / -1; }
-    .market { justify-self: start; margin-top: 16px; }
-    .links { margin-top: 12px; }
-    .fields { margin-top: 6px; }
+    .market { font-size: 14.5px; align-self: start; }
+    .links, .fields { grid-column: 1 / -1; }
+    .links { margin-top: 16px; }
+    .links a:not(.cta) { display: inline-block; padding: 6px 0; }
+    .fields { margin-top: 8px; }
     .fields.interests { margin-top: 2px; }
-    .links .sep { margin: 0 5px; }
-    .grid { grid-template-columns: 1fr; gap: 8px; padding-top: 20px; }
+    .grid { grid-template-columns: 1fr; grid-template-areas: "main" "side"; padding-top: 20px; }
+    aside { padding-top: 8px; }
     .intro { font-size: 16px; line-height: 1.55; margin-bottom: 22px; }
     .intro p { margin-bottom: 10px; }
     .jmp { padding: 18px 16px 20px; }
     .jmp .title { font-size: 20px; }
   }
+
+  /* Print: two-column layout on about two Letter pages, all abstracts shown */
+  @media print {
+    @page { size: letter; margin: .55in .6in; }
+    body { font-size: 10pt; line-height: 1.4; background: #fff; }
+    .wrap { max-width: none; padding: 0; }
+    .skip, .more summary, footer { display: none; }
+    header { gap: 18px; padding-bottom: 10px; }
+    .photo { width: 80px; height: 100px; }
+    h1 { font-size: 20pt; }
+    .role, .market, .links, .fields, .intro { font-size: 10pt; }
+    .links { margin-top: 6px; }
+    .links a.cta { padding: 0; border: 0; }
+    .grid { grid-template-columns: 1.6in minmax(0, 1fr); column-gap: .3in; padding-top: 12px; }
+    aside { font-size: 9pt; } aside .sub { font-size: 8.5pt; }
+    section { margin-bottom: 14px; } aside section { margin-bottom: 12px; }
+    h2 { font-size: 8pt; margin-bottom: 6px; padding-bottom: 3px; break-after: avoid; }
+    .title { font-size: 11pt; } .jmp .title { font-size: 12pt; }
+    .abstract, .meta, .coauthors, .pres, .pres h4, .list { font-size: 9.5pt; }
+    .jmp { padding: 10px 14px; background: none; border-left-width: 2px; }
+    details .abstract { padding: 0; border: 0; margin-top: 4px; }
+    .paper, .list li, aside li { break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
 </style>
 </head>
 <body>
-<a class="skip" href="#research">Skip to research</a>
+<a class="skip" href="#main">Skip to main content</a>
 <div class="wrap">
 
   <header>
-    <img class="photo" src="photo.jpg" alt="Photo of Saya Ikegawa" width="200" height="250">
+    <img class="photo" src="photo.jpg" alt="Saya Ikegawa" width="180" height="225" fetchpriority="high">
     <div>
       <h1>Saya Ikegawa</h1>
       <p class="role">PhD Candidate in Economics, University of Washington</p>
-      <p class="market">I’m on the 2026–2027 job market</p>
+      <p class="market">On the 2026–2027 job market</p>
       <p class="links">
-        <a href="cv.pdf">CV</a><span class="sep">·</span>
+        <!-- When the JMP is posted, add this before the CV button:
+        <a class="cta" href="Ikegawa_JMP.pdf">Job Market Paper (PDF)</a> -->
+        <a class="cta" href="cv.pdf">CV (PDF)</a>
         <a href="mailto:sikegawa@uw.edu">sikegawa@uw.edu</a>
       </p>
       <p class="fields"><b>Fields:</b> Quantitative Macroeconomics, Public Economics</p>
@@ -171,11 +233,10 @@
   </header>
 
   <div class="grid">
-    <main>
+    <main id="main" tabindex="-1">
       <div class="intro">
         <p>I am a 6th-year PhD candidate in Economics at the University of Washington.</p>
-        <p>I received summer dissertation fellowships from the <b>San Francisco Fed</b> and the <b>St. Louis Fed</b> in 2026. I was a PhD summer intern at the <b>IMF</b> in 2024.</p>
-        <p>Previously, I worked as a research assistant at <a href="https://quantecon.org/"><b>QuantEcon</b></a> (2020–2021).</p>
+        <p>In summer 2026, I was a dissertation fellow at the <a href="https://www.frbsf.org/work-with-us/careers/thomas-j-sargent-dissertation-fellowship/"><b>San Francisco Fed</b></a> and the <a href="https://www.stlouisfed.org/careers/yourcareer/opportunities/phd-dissertation-fellowships"><b>St. Louis Fed</b></a>.</p>
       </div>
 
       <section id="research" aria-labelledby="jmp-h">
@@ -188,14 +249,19 @@
             <li><a href="Ikegawa_JMP.pdf">PDF</a></li>
             <li><a href="Ikegawa_JMP_slides.pdf">Slides</a></li>
           </ul>
-          and add back the header link before CV:
-          <a href="Ikegawa_JMP.pdf">Job Market Paper</a><span class="sep">·</span> -->
+          and add the Job Market Paper button in the header (see the comment there). -->
           <h3 class="title">Unrealized Capital Gains Tax, Business Investment, and Wealth Inequality</h3>
           <p class="meta status">Draft coming soon</p>
           <p class="abstract"><b>Abstract:</b> Unrealized capital gains constitute a large share of wealth at the top of the U.S. wealth distribution and are concentrated in privately held businesses, yet they remain untaxed under the current realization-based capital-gains tax system. This paper studies the welfare consequences of replacing realization-based taxation with an accrual-based (mark-to-market) tax regime, with particular emphasis on entrepreneurial business assets. Using a quantitative general equilibrium model, I find that an economy-wide switch to accrual-based taxation reduces private business production by 8% and aggregate output by 5%, because the efficiency loss from entrepreneurial entry deterrence outweighs the efficiency gains from mitigating capital lock-in. In contrast, applying accrual-based taxation only to wealthy households yields a consumption-equivalent welfare gain of 1%. By targeting wealthy households, who are more likely to be incumbent entrepreneurs, this reform dampens entry deterrence while reducing inequality.</p>
-          <div class="facts">
-            <p><b>Award:</b> Grover &amp; Creta Ensley Fellowship, University of Washington (2026)</p>
-            <p><b>Presentations:</b> <span class="nw">BSE Summer Forum 2026</span> · <span class="nw">San Francisco Fed 2026</span> · <span class="nw">St. Louis Fed 2026</span> · Fourth Women in Central Banking Workshop&nbsp;(scheduled)</p>
+          <div class="pres">
+            <p class="award"><b>Award:</b> Grover &amp; Creta Ensley Fellowship, University of Washington <span class="when">(2026)</span></p>
+            <h4>Presented at</h4>
+            <ul>
+              <li><a href="https://events.bse.eu/live/files/6393-sf2026-program-inequality-and-efficiency-models">BSE Summer Forum: Inequality and Efficiency</a>, Barcelona <span class="when">(2026)</span></li>
+              <li>Federal Reserve Bank of San Francisco <span class="when">(2026)</span></li>
+              <li>Federal Reserve Bank of St. Louis <span class="when">(2026)</span></li>
+              <li><a href="https://www.aeaweb.org/content/file?id=24436">Fourth Women in Central Banking Workshop</a>, Banco de México <span class="when">(November 2026, scheduled)</span></li>
+            </ul>
           </div>
         </article>
       </section>
@@ -204,61 +270,58 @@
         <h2 id="wip-h">Work in Progress</h2>
 
         <article class="paper">
-          <h3 class="title">Reassessing Japan’s Fiscal Health</h3>
+          <h3 class="title" id="p-japan">Reassessing Japan’s Fiscal Health</h3>
           <p class="coauthors">with <a href="https://users.econ.umn.edu/~erm/">Ellen McGrattan</a> and <a href="https://sites.google.com/site/adrianperaltaalva/">Adrian Peralta-Alva</a></p>
-          <p class="meta">Presented at CEBRA Annual Meeting 2025</p>
+          <p class="meta">Presented at <a href="https://cebra.org/2025-cebra-annual-meeting-call-for-papers/">CEBRA Annual Meeting</a> (2025)</p>
           <details class="more">
-            <summary>Abstract</summary>
-            <p class="abstract">Japan faces considerable fiscal challenges due to rapid population aging. A large body of literature argues that <em>high</em> consumption tax rates or other significant policy changes will be required to stabilize public economicss and maintain retirement, health, and long-term care systems. However, all existing quantitative studies <em>ignore</em> the role of <em>intangible capital</em>, thereby understating Japan’s true wealth base and overstating the necessary tax burden. This paper re-examines the fiscal issue by incorporating newly compiled data on Japan’s intangible investments into a dynamic overlapping generations model. We find that the consumption tax rate required to finance increased transfers for the elderly is approximately 6 percentage points lower when accounting for intangible capital, as the enhanced capital stock boosts production and broadens the tax base. Neglecting intangible capital thus significantly overstates Japan’s fiscal challenge.</p>
+            <summary aria-describedby="p-japan">Abstract</summary>
+            <p class="abstract">Japan faces considerable fiscal challenges due to rapid population aging. A large body of literature argues that <em>high</em> consumption tax rates or other significant policy changes will be required to stabilize public finances and maintain retirement, health, and long-term care systems. However, all existing quantitative studies <em>ignore</em> the role of <em>intangible capital</em>, thereby understating Japan’s true wealth base and overstating the necessary tax burden. This paper re-examines the fiscal issue by incorporating newly compiled data on Japan’s intangible investments into a dynamic overlapping generations model. We find that the consumption tax rate required to finance increased transfers for the elderly is approximately 6 percentage points lower when accounting for intangible capital, as the enhanced capital stock boosts production and broadens the tax base. Neglecting intangible capital thus significantly overstates Japan’s fiscal challenge.</p>
           </details>
         </article>
 
         <article class="paper">
-          <h3 class="title">Intangible Investment in Japan: A Comparison with the United States</h3>
-          <p class="meta">Presented at the International Monetary Fund, Research Department (2024)</p>
+          <h3 class="title" id="p-intan">Intangible Investment in Japan: A Comparison with the United States</h3>
+          <p class="meta">Presented at the IMF Research Department (2024)</p>
           <details class="more">
-            <summary>Abstract</summary>
+            <summary aria-describedby="p-intan">Abstract</summary>
             <p class="abstract">GDP measures do not incorporate all intangible investment undertaken by firms, although the importance of intangible assets has been increasingly recognized. To provide a more comprehensive picture of macroeconomic conditions, this paper measures intangible investment in Japan, including additional intangible assets that are currently under discussion for inclusion in national accounts. The findings show that intangible investment in Japan is more than twice as large as reported in current national accounts statistics, and that its ratio to GDP is increasing and exceeds that of the United States. Incorporating these additional intangible assets has significant implications for macroeconomic measurement. First, Japan’s five-year GDP growth rate is estimated to increase by approximately 1 percentage point relative to the current measure, while the corresponding estimate for the United States remains largely unchanged. In addition, the impact on GDP varies substantially across industries. Finally, the estimated labor share decreases by about 4 percentage points in both countries.</p>
           </details>
         </article>
 
         <article class="paper">
           <h3 class="title">Markups and Inequality in Intangible Economy</h3>
+          <p class="meta">(In Progress)</p>
         </article>
       </section>
 
       <section aria-labelledby="teach-h">
         <h2 id="teach-h">Teaching</h2>
         <ul class="list">
-          <li><b>Steven Langton Teaching Award</b>, University of Washington <span class="when">(2025)</span></li>
+          <li><a href="https://econ.washington.edu/graduate-student-awards"><b>Steven Langton Teaching Award</b></a>, University of Washington <span class="when">(2025)</span></li>
           <li>Instructor, PhD Macroeconomics Math Camp <span class="when">(Summer 2023, 2024)</span></li>
-          <li>Teaching Assistant, ECON 502 Macroeconomic Analysis I, PhD <span class="when">(Fall 2023, 2024)</span></li>
-          <li>Teaching Assistant, ECON 503 Macroeconomic Analysis II, PhD <span class="when">(Winter 2025)</span></li>
-          <li>Teaching Assistant, ECON 201 Introduction to Macroeconomics <span class="when">(Fall 2022; Winter and Spring 2023; Winter 2024; Spring 2025)</span></li>
+          <li>Teaching Assistant, PhD Macroeconomic Analysis I and II (ECON 502, 503) <span class="when">(2023–2025)</span></li>
+          <li>Teaching Assistant, Introduction to Macroeconomics (ECON 201) <span class="when">(2022–2025, five quarters)</span></li>
         </ul>
-      </section>
-
-      <section aria-labelledby="prog-h">
-        <h2 id="prog-h">Programming Skills</h2>
-        <p class="skills">Python, JAX, MATLAB, R, Stata, Fortran</p>
       </section>
     </main>
 
-    <aside>
+    <aside aria-label="References and background">
       <section aria-labelledby="ref-h">
         <h2 id="ref-h">References</h2>
         <ul>
-          <li><a href="https://faculty.washington.edu/ghiro/">Fabio Ghironi</a> (chair)<span class="sub">University of Washington</span></li>
-          <li><a href="https://users.econ.umn.edu/~erm/">Ellen McGrattan</a><span class="sub">University of Minnesota</span></li>
-          <li><a href="https://sites.google.com/view/briangreaney">Brian Greaney</a><span class="sub">Federal Reserve Bank of Dallas</span></li>
+          <li><a href="https://faculty.washington.edu/ghiro/">Fabio Ghironi</a> (chair)<span class="sub">Paul F. Glaser Professor, University of Washington</span></li>
+          <li><a href="https://users.econ.umn.edu/~erm/">Ellen McGrattan</a><span class="sub">Professor, University of Minnesota</span></li>
+          <li><a href="https://sites.google.com/view/briangreaney">Brian Greaney</a><span class="sub">Senior Research Economist, Federal Reserve Bank of Dallas</span></li>
         </ul>
       </section>
 
       <section aria-labelledby="exp-h">
         <h2 id="exp-h">Experience</h2>
         <ul>
-          <li>Research Visit, University of Minnesota<span class="sub">March–May 2024</span><span class="sub note">Attended workshops led by Ellen McGrattan and Mariacristina De Nardi</span></li>
+          <li>Research Intern, International Monetary Fund<span class="sub">June–August 2024</span></li>
+          <li>Research Visitor, University of Minnesota<span class="sub">March–May 2024</span></li>
           <li>Visiting Researcher, Keio University<span class="sub">June–August 2023</span></li>
+          <li>Research Assistant, <a href="https://quantecon.org/">QuantEcon</a><span class="sub">2020–2021</span></li>
         </ul>
       </section>
 
@@ -266,14 +329,25 @@
         <h2 id="edu-h">Education</h2>
         <ul>
           <li>PhD Economics, University of Washington<span class="sub">Expected 2027</span></li>
-          <li>MA Economics, Australian National University<span class="sub">2021 · Japan-IMF Scholarship</span></li>
+          <li>MA Economics, Australian National University<span class="sub">2021</span></li>
           <li>BS Economics, Keio University<span class="sub">2016</span></li>
+          <li>Japan-IMF Scholarship Program<span class="sub">2021–2022</span></li>
         </ul>
+      </section>
+
+      <section aria-labelledby="prog-h">
+        <h2 id="prog-h">Programming</h2>
+        <p>Python, JAX, MATLAB, R, Stata, Fortran</p>
       </section>
     </aside>
   </div>
 
   <footer>Last updated October 2026</footer>
 </div>
+<script>
+  // Show every abstract when the page is printed, then restore.
+  addEventListener('beforeprint', () => document.querySelectorAll('details').forEach(d => { d.dataset.p = d.open; d.open = true; }));
+  addEventListener('afterprint', () => document.querySelectorAll('details').forEach(d => { d.open = d.dataset.p === 'true'; }));
+</script>
 </body>
 </html>
